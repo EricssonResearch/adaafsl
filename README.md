@@ -1,10 +1,10 @@
-# AdaAFSL: Adaptive Federated Split Learning
+# AdaAFSL: Adaptive Asynchronous Federated Split Learning
 
 A framework for network-aware distributed machine learning that combines **Split Learning (SL)** with **Federated Learning (FL)** and adapts communication overhead based on real-time network conditions. The system monitors link utilization via SNMP and dynamically reduces the volume of intermediate activations and gradients exchanged between clients and the server using stochastic masking and quantization.
 
 ## What It Does
 
-AFSL addresses the communication bottleneck in distributed learning over bandwidth-constrained networks (e.g., edge/IoT deployments). It:
+AdaAFSL addresses the communication bottleneck in distributed learning over bandwidth-constrained networks (e.g., edge/IoT deployments). It:
 
 1. **Splits a neural network** between clients (early layers) and a server (later layers), so clients only transmit intermediate representations rather than raw data or full model updates.
 2. **Monitors network utilization** in real time using SNMP polling of switch interfaces to detect congestion.
@@ -34,7 +34,8 @@ AFSL addresses the communication bottleneck in distributed learning over bandwid
 
 | Algorithm | Description |
 |-----------|-------------|
-| **AFSL**  | Adaptive Federated Split Learning (network-aware compression) |
+| **AdaAFSL**  | Adaptive Asynchronous Federated Split Learning (network-aware compression + Asynchronous updates) |
+| **AFSL**  | Asynchronous Federated Split Learning (Asynchronous updates) |
 | **FSL**   | Federated Split Learning (fixed split, no adaptive compression) |
 | **SL**    | Standard Split Learning |
 | **PSL**   | Parallel Split Learning |
